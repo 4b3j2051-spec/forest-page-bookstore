@@ -1,0 +1,381 @@
+
+
+/* 導覽列 */
+nav {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 80px;
+    background-color: white;
+}
+
+#countdown {
+    font-size: 18px;
+    color: #333;
+    font-family: "Noto Serif TC", serif;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+}
+.menu a {
+    text-decoration: none;
+    color: #344b55;
+    font-family: "Noto Serif TC", serif;
+    font-weight: bold;
+}
+
+/* 導覽列動畫 */
+
+.menu a {
+    position: relative;
+    text-decoration: none;
+    color: #344b55;
+    transition: color 0.3s ease;
+}
+
+.menu a:hover {
+    color: #426777;
+}
+
+/* 底線動畫 */
+
+.menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background-color: #426777;
+    transition: width 0.3s ease;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+
+/* ===== 全頁基本設定 ===== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #effcff;
+    color: #344b55;
+    font-family: "Noto Sans TC", sans-serif;
+    line-height: 1.8;
+}
+
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* ===== 導覽列 ===== */
+.category-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 18px 7%;
+    background-color: #ffffff;
+}
+
+.brand,
+.category-footer > a {
+    color: #344b55;
+    font-family: "Noto Serif TC", serif;
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+}
+
+.nav-links a {
+    color: #526b76;
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #426777;
+    font-weight: 600;
+}
+
+/* ===== 頁面主視覺 ===== */
+.category-hero {
+    position: relative;
+    padding: 75px 20px 80px;
+    overflow: hidden;
+    background: linear-gradient(120deg, #effcff, #dceff4);
+    text-align: center;
+}
+
+.eyebrow,
+.small-title {
+    color: #648b9a;
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+.eyebrow {
+    margin: 0 0 12px;
+}
+
+.category-hero h1 {
+    margin: 0;
+    font-family: "Noto Serif TC", serif;
+    font-size: 42px;
+    font-weight: 600;
+    letter-spacing: 5px;
+}
+
+.hero-description {
+    margin: 20px 0 25px;
+    color: #607780;
+    font-size: 14px;
+    line-height: 2.2;
+}
+
+.hero-decoration {
+    color: #8aaab5;
+    font-size: 10px;
+    letter-spacing: 4px;
+}
+
+/* ===== 分類內容 ===== */
+.category-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 70px 35px 80px;
+}
+
+.category-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 35px;
+}
+
+.small-title {
+    margin: 0 0 6px;
+}
+
+.category-heading h2 {
+    margin: 0;
+    font-family: "Noto Serif TC", serif;
+    font-size: 28px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.category-count {
+    color: #8aaab5;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+/* ===== 3 × 3 分類卡片 ===== */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.category-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 0;
+    min-height: 255px;
+    padding: 28px;
+    overflow: hidden;
+    background-color: #ffffff;
+    border: 1px solid #e0eff3;
+    border-radius: 4px;
+    color: #344b55;
+    text-decoration: none;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    border-color: #b7dce5;
+    box-shadow: 0 12px 28px #42677712;
+}
+
+.category-number {
+    align-self: flex-end;
+    color: #a5cbd5;
+    font-family: "Noto Serif TC", serif;
+    font-size: 25px;
+    line-height: 1.2;
+}
+
+.category-en {
+    margin-top: 10px;
+    color: #7196a3;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+}
+
+.category-card h3 {
+    margin: 10px 0 8px;
+    font-family: "Noto Serif TC", serif;
+    font-size: 21px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.category-card p {
+    margin: 0 0 20px;
+    color: #71858d;
+    font-size: 12px;
+    line-height: 2;
+}
+
+.category-arrow {
+    margin-top: auto;
+    padding-top: 10px;
+    border-top: 1px solid #e8f2f5;
+    width: 100%;
+    color: #648b9a;
+    font-size: 11px;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+.category-card:hover .category-arrow {
+    color: #344b55;
+}
+
+/* ===== 頁尾前的小句子 ===== */
+.category-note {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    margin-top: 65px;
+    padding: 25px;
+    border-top: 1px solid #dcecf1;
+    color: #648b9a;
+    text-align: center;
+}
+
+.category-note span {
+    font-size: 20px;
+}
+
+.category-note p {
+    font-family: "Noto Serif TC", serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+/* ===== 頁尾 ===== */
+.category-footer {
+    padding: 45px 20px 35px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.category-footer > a {
+    font-size: 23px;
+}
+
+.category-footer p {
+    margin: 10px 0;
+    color: #607780;
+    font-size: 13px;
+}
+
+.category-footer > span {
+    color: #8aaab5;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+/* ===== 平板 ===== */
+@media (max-width: 900px) {
+    .category-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* ===== 手機 ===== */
+@media (max-width: 600px) {
+    .category-nav {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .nav-links {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .category-hero {
+        padding: 60px 20px;
+    }
+
+    .category-hero h1 {
+        font-size: 32px;
+    }
+
+    .category-main {
+        padding: 45px 20px 60px;
+    }
+
+    .category-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .category-heading h2 {
+        font-size: 24px;
+    }
+
+    .category-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .category-card {
+        min-height: 220px;
+        padding: 24px;
+    }
+
+    .category-note {
+        gap: 8px;
+        padding: 20px 5px;
+    }
+
+    .category-note p {
+        font-size: 12px;
+    }
+}

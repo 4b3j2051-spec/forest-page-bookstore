@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="categories.css">
+    <title>BOOKSTORE｜森頁書店｜分類</title>
+</head>
+<body>
+    <!-- 導覽列 -->
+    <nav>
+
+        <div class="logo">
+            BOOKSTORE
+        </div>
+
+        <div class="menu">
+
+            <a href="index.html" style="text-align: center;">首頁</a>
+            <a href="about-us.html" style="text-align: center;">關於我們</a>
+            <a href="all-books.html" style="text-align: center;">所有書籍</a>
+            <a href="categories.html" style="text-align: center;">分類</a>
+
+        </div>
+        <h3 id="countdown"></h3>
+            <script>
+        const targetDate = new Date("2026-11-10");
+        const today = new Date();
+
+        const difference = targetDate - today;
+
+        const days = Math.ceil(
+            difference / (1000 * 60 * 60 * 24)
+        );
+
+        document.getElementById("countdown").textContent =
+            "距離新書上市還有 " + days + " 天";
+            </script>
+    </nav>
+
+     <!-- 頁面主視覺 -->
+    <header class="category-hero">
+        <p class="eyebrow">EXPLORE BY CATEGORY</p>
+        <h1>書籍分類</h1>
+        <p class="hero-description">
+            每一種閱讀，都能帶我們走向不同的世界。<br>
+            選擇你感興趣的方向，開始探索吧。
+        </p>
+        <span class="hero-decoration">DISCOVER YOUR WORLD</span>
+    </header>
+
+    <!-- 分類卡片 -->
+    <main class="category-main">
+
+        <div class="category-heading">
+            <div>
+                <p class="small-title">FIND YOUR INTEREST</p>
+                <h2>探索閱讀的各種可能</h2>
+            </div>
+            <p class="category-count">09 CATEGORIES</p>
+        </div>
+
+        <section class="category-grid">
+
+            <div class="category-card">
+                <span class="category-number">01</span>
+                <span class="category-en">FICTION & LITERATURE</span>
+                <h3>小說與文學</h3>
+                <p>走進故事的世界，在文字之中遇見不同的人生與風景。</p>
+                <span class="category-arrow">探索分類 ↗</span>
+            </div>
+
+            <div class="category-card">
+                <span class="category-number">02</span>
+                <span class="category-en">MIND & GROWTH</span>
+                <h3>心靈與成長</h3>
+                <p>認識自己、整理思緒，在閱讀中找到成長的力量。</p>
+                <span class="category-arrow">探索分類 ↗</span>
+            </div>
+
+            <div class="category-card">
+                <span class="category-number">03</span>
+                <span class="category-en">BUSINESS & FINANCE</span>
+                <h3>商業與理財</h3>
+                <p>理解商業思維，學習理財知識，探索更多可能性。</p>
+                <span class="category-arrow">探索分類 ↗</span>
+            </div>
+
+            <div class="category-card">
+                <span class="category-number">04</span>
+                <span class="category-en">ART & DESIGN</span>
+                <h3>藝術與設計</h3>
+                <p>從美學、創作到設計思考，發現生活中的靈感。</p>
+                <span class="category-arrow">探索分類 ↗</span>
+            </div>
+
+            <div class="category-card">
+                <span class="category-number">05</span>
+                <span class="category-en">LIFESTYLE</span>
+                <h3>生活風格</h3>
+                <p>從日常習慣到生活美學，尋找適合自己的生活方式。</p>
+                <span class="category-arrow">探索分類 ↗</span>
+            </div>
+
+            <div class="category-card">
+                <span class="category-number">06</span>
+                <span class="category-en">HUMANITIES & KNOWLEDGE</span>
+                <h3>人文與知識</h3>
+                <p>認識歷史、文化與世界，拓展看待事物的角度。</p>
+                <span class="category-arrow">探索分類 ↗</span>
+            </div>
+
+            <div class="category-card">
+                <span class="category-number">07</span>
+                <span class="category-en">LANGUAGE LEARNING</span>
+                <h3>語言學習</h3>
+                <p>從單字、文法到日常表達，開啟跨越語言的旅程。</p>
+                <span class="category-arrow">探索分類 ↗</span>
+            </div>
+
+            <div class="category-card">
+                <span class="category-number">08</span>
+                <span class="category-en">COMICS & GRAPHIC BOOKS</span>
+                <h3>漫畫與圖像</h3>
+                <p>透過圖像與故事，感受文字以外的閱讀樂趣。</p>
+                <span class="category-arrow">探索分類 ↗</span>
+            </div>
+
+            <div class="category-card">
+                <span class="category-number">09</span>
+                <span class="category-en">CHILDREN & TEENS</span>
+                <h3>兒童與青少年</h3>
+                <p>陪伴好奇心成長，在故事中探索世界、想像未來。</p>
+                <span class="category-arrow">探索分類 ↗</span>
+            </div>
+
+        </section>
+
+        <!-- 頁尾文字 -->
+        <section class="category-note">
+            <span>✳</span>
+            <p>每一次翻頁，都是探索世界的新起點。</p>
+        </section>
+
+    </main>
+
+    <!-- 頁尾 -->
+    <footer class="category-footer">
+        <a href="index.html">森頁書店</a>
+        <p>在文字之間，遇見不同的世界。</p>
+        <span>TURN A PAGE, FIND A WORLD.</span>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,472 @@
+
+/* 導覽列 */
+
+nav {
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 80px;
+
+    background-color: white;
+
+    #countdown {
+        font-size: 18px;
+        color: #333;
+    font-family: "Noto Serif TC", serif;
+}
+}
+
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+.menu {
+    display: flex;
+    gap: 40px;
+}
+
+
+.menu a {
+    text-decoration: none;
+    color: #333;
+    font-family: "Noto Serif TC", serif;
+    font-weight: bold;
+}
+
+/* 導覽列動畫 */
+
+.menu a {
+    position: relative;
+    text-decoration: none;
+    color: #344b55;
+    transition: color 0.3s ease;
+}
+
+.menu a:hover {
+    color: #426777;
+}
+
+/* 底線動畫 */
+
+.menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background-color: #426777;
+    transition: width 0.3s ease;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+/* ===== 全頁基本設定 ===== */
+body {
+    margin: 0;
+    background-color: #effcff;
+    color: #344b55;
+    font-family: "Noto Sans TC", sans-serif;
+    line-height: 1.8;
+}
+
+.about-nav,
+.about-nav * {
+    box-sizing: border-box;
+}
+
+.about-nav {
+    min-height: 80px;
+    padding: 18px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    background-color: #ffffff;
+}
+
+.brand,
+.footer-brand {
+    color: #344b55;
+    font-family: "Noto Serif TC", serif;
+    font-size: 25px;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 3px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.nav-links a {
+    color: #526b76;
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #426777;
+    font-weight: 600;
+}
+
+/* ===== 主視覺 ===== */
+.about-hero {
+    position: relative;
+    min-height: 570px;
+    padding: 110px 10%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: hidden;
+    background: linear-gradient(
+        120deg,
+        #effcff 0%,
+        #effcff 58%,
+        #dceff4 100%
+    );
+}
+
+.eyebrow,
+.small-title,
+.section-label {
+    color: #648b9a;
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+.eyebrow {
+    margin: 0 0 18px;
+}
+
+.about-hero h1 {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    font-family: "Noto Serif TC", serif;
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 600;
+    line-height: 1.6;
+    letter-spacing: 2px;
+}
+
+.hero-description {
+    position: relative;
+    z-index: 1;
+    margin: 20px 0 28px;
+    color: #607780;
+    font-size: 15px;
+    line-height: 2.2;
+}
+
+.hero-decoration {
+    position: absolute;
+    top: 70px;
+    right: -10px;
+    color: #b7dce5;
+    font-family: "Noto Serif TC", serif;
+    font-size: clamp(70px, 12vw, 160px);
+    font-weight: 700;
+    letter-spacing: 8px;
+    opacity: 0.45;
+    pointer-events: none;
+}
+
+.hero-bottom {
+    position: absolute;
+    right: 7%;
+    bottom: 35px;
+    color: #7196a3;
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.main-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+    padding: 12px 25px;
+    background-color: #426777;
+    border: 1px solid #426777;
+    border-radius: 3px;
+    color: #ffffff;
+    font-size: 14px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.main-button:hover {
+    background-color: #344b55;
+    transform: translateY(-2px);
+}
+
+/* ===== 品牌介紹 ===== */
+.story-section {
+    padding: 100px 10%;
+    background-color: #ffffff;
+}
+
+.section-label {
+    margin-bottom: 48px;
+}
+
+.story-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: start;
+}
+
+.small-title {
+    margin: 0 0 15px;
+}
+
+.story-heading h2,
+.values-heading h2,
+.selection-content h2 {
+    margin: 0;
+    font-family: "Noto Serif TC", serif;
+    font-size: clamp(26px, 3vw, 36px);
+    font-weight: 500;
+    line-height: 1.8;
+    letter-spacing: 1px;
+}
+
+.story-text {
+    padding-top: 12px;
+    color: #5e727b;
+    font-size: 14px;
+    line-height: 2.3;
+}
+
+.story-text p {
+    margin: 0 0 20px;
+}
+
+/* ===== 品牌理念卡片 ===== */
+.values-section {
+    padding: 100px 10%;
+    background-color: #effcff;
+}
+
+.values-heading {
+    margin-bottom: 45px;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.value-card {
+    position: relative;
+    min-height: 250px;
+    padding: 30px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    border: 1px solid #e0eff3;
+    border-radius: 5px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px #42677712;
+}
+
+.value-number {
+    position: absolute;
+    top: 20px;
+    right: 22px;
+    color: #a5cbd5;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.value-icon {
+    margin: 15px 0;
+    color: #648b9a;
+    font-size: 30px;
+}
+
+.value-card h3 {
+    margin: 10px 0;
+    font-family: "Noto Serif TC", serif;
+    font-size: 21px;
+    font-weight: 600;
+}
+
+.value-card p {
+    margin: 0;
+    color: #6a7e86;
+    font-size: 13px;
+    line-height: 2;
+}
+
+/* ===== 選書理念 ===== */
+.selection-section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 390px;
+    padding: 80px 10%;
+    box-sizing: border-box;
+    overflow: hidden;
+    background-color: #dceff4;
+}
+
+.selection-content {
+    position: relative;
+    z-index: 1;
+    max-width: 650px;
+}
+
+.selection-content > p:not(.small-title) {
+    max-width: 580px;
+    margin: 22px 0;
+    color: #526b76;
+    font-size: 14px;
+    line-height: 2.2;
+}
+
+.selection-decoration {
+    position: absolute;
+    right: 8%;
+    bottom: 10px;
+    color: #b7dce5;
+    font-family: "Noto Serif TC", serif;
+    font-size: clamp(70px, 12vw, 145px);
+    font-weight: 700;
+    line-height: 1;
+    opacity: 0.7;
+    text-align: right;
+    pointer-events: none;
+}
+
+.text-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #648b9a;
+    color: #426777;
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.text-button:hover {
+    color: #223e4a;
+}
+
+/* ===== 頁尾 ===== */
+.about-footer {
+    padding: 55px 20px 25px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.footer-brand {
+    display: inline-block;
+    font-size: 23px;
+}
+
+.about-footer p {
+    margin: 10px 0;
+    color: #607780;
+    font-size: 13px;
+}
+
+.about-footer > span {
+    color: #8aaab5;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.footer-line {
+    max-width: 1100px;
+    height: 1px;
+    margin: 30px auto 18px;
+    background-color: #e0eff3;
+}
+
+.about-footer small {
+    color: #8a9ba1;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+/* ===== 平板與手機版 ===== */
+@media (max-width: 768px) {
+    .about-nav {
+        flex-direction: column;
+        padding: 20px;
+        gap: 12px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .about-hero {
+        min-height: 500px;
+        padding: 80px 7%;
+    }
+
+    .hero-decoration {
+        top: 35px;
+        right: -15px;
+    }
+
+    .hero-bottom {
+        right: 7%;
+        font-size: 8px;
+    }
+
+    .story-section,
+    .values-section {
+        padding: 65px 7%;
+    }
+
+    .story-content {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .value-card {
+        min-height: auto;
+    }
+
+    .selection-section {
+        min-height: 420px;
+        padding: 65px 7%;
+    }
+
+    .selection-decoration {
+        right: 3%;
+        font-size: 75px;
+    }
+}

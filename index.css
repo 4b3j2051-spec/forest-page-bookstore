@@ -1,0 +1,720 @@
+/* =========================
+   全站基本設定
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #effcff;
+    --main-color: #426777;
+    --light-blue: #b7dce5;
+    --text-color: #344b55;
+    --white: #ffffff;
+    --light-gray: #f5fafb;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, "Noto Serif TC", serif;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    text-align: center;
+    line-height: 1.7;
+}
+
+/* =========================
+   首頁最上方品牌標題
+========================= */
+
+body > h1 {
+    font-family: "Noto Serif TC", serif;
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: 6px;
+    margin: 24px 0 0;
+    color: var(--main-color);
+}
+
+body > p {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    margin: 0 0 20px;
+    color: #7895a0;
+}
+
+/* =========================
+   導覽列
+========================= */
+
+nav {
+    min-height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 16px 6%;
+    background-color: var(--white);
+    border-top: 1px solid #e3f0f3;
+    border-bottom: 1px solid #e3f0f3;
+}
+
+.logo {
+    color: var(--main-color);
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    white-space: nowrap;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+}
+
+.menu a {
+    position: relative;
+    text-decoration: none;
+    color: var(--text-color);
+    font-family: "Noto Serif TC", serif;
+    font-size: 15px;
+    font-weight: bold;
+    white-space: nowrap;
+    transition: color 0.3s;
+}
+
+.menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background-color: var(--main-color);
+    transition: width 0.3s;
+}
+
+.menu a:hover {
+    color: var(--main-color);
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+#countdown {
+    color: var(--main-color);
+    font-family: "Noto Serif TC", serif;
+    font-size: 13px;
+    font-weight: normal;
+    white-space: nowrap;
+}
+
+/* =========================
+   主視覺區
+========================= */
+
+.hero {
+    display: grid;
+    grid-template-columns: minmax(260px, 0.85fr) minmax(0, 1.65fr);
+    align-items: center;
+    gap: 48px;
+    width: 100%;
+    max-width: 1440px;
+    min-height: 600px;
+    margin: 0 auto;
+    padding: 72px 6%;
+    text-align: left;
+}
+
+/* 左側文字 */
+
+.hero-text {
+    min-width: 0;
+    text-align: left;
+}
+
+.hero-text > p:first-child {
+    display: inline-block;
+    margin-bottom: 22px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--light-blue);
+    color: var(--main-color);
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.hero-text h1 {
+    margin: 0 0 24px;
+    color: var(--main-color);
+    font-family: "Noto Serif TC", serif;
+    font-size: clamp(38px, 4vw, 58px);
+    font-weight: 700;
+    line-height: 1.45;
+    letter-spacing: 2px;
+}
+
+.hero-text > p:nth-of-type(2) {
+    margin-bottom: 32px;
+    color: #6d858f;
+    font-family: "Noto Serif TC", serif;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 2;
+}
+
+/* 開始探索按鈕 */
+
+.hero button {
+    padding: 13px 30px;
+    border: 1px solid var(--main-color);
+    border-radius: 6px;
+    background-color: var(--main-color);
+    color: var(--white);
+    font-family: "Noto Serif TC", serif;
+    font-size: 15px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s,
+                transform 0.3s, box-shadow 0.3s;
+}
+
+.hero button:hover {
+    background-color: var(--white);
+    color: var(--main-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px #42677720;
+}
+
+/* =========================
+   右側翻轉圖卡
+========================= */
+
+.hero-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: center;
+    gap: 20px;
+    min-width: 0;
+}
+
+/* 圖卡外框 */
+
+.flip-card {
+    width: 100%;
+    max-width: 240px;
+    height: 340px;
+    min-width: 0;
+    margin: 0 auto;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+/* 圖卡翻轉動畫 */
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.7s ease;
+}
+
+.flip-card.is-flipped .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* 正反面共用樣式 */
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border: 1px solid #e3f0f3;
+    border-radius: 14px;
+    box-shadow: 0 8px 24px #42677712;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+/* 正面 */
+
+.flip-card-front {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 18px 14px;
+    background-color: var(--white);
+    transition: box-shadow 0.3s, border-color 0.3s;
+}
+
+.flip-card:hover .flip-card-front,
+.flip-card:hover .flip-card-back {
+    border-color: var(--light-blue);
+    box-shadow: 0 12px 28px #42677720;
+}
+
+.flip-card-front img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    margin-bottom: 14px;
+}
+
+.flip-card-front h3 {
+    margin: 4px 0 6px;
+    color: var(--main-color);
+    font-family: "Noto Serif TC", serif;
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+.flip-card-front p {
+    margin: 0;
+    color: #7895a0;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+/* 背面 */
+
+.flip-card-back {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 22px 18px;
+    background-color: #e3f3f7;
+    color: var(--text-color);
+    text-align: center;
+    transform: rotateY(180deg);
+}
+
+.flip-card-back h3 {
+    margin-bottom: 14px;
+    color: var(--main-color);
+    font-family: "Noto Serif TC", serif;
+    font-size: 19px;
+    line-height: 1.6;
+}
+
+.flip-card-back p {
+    margin: 0;
+    color: #526c77;
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 2;
+}
+
+
+
+/* =========================
+   熱門書籍區
+========================= */
+
+.books {
+    padding: 72px 5% 80px;
+    background-color: var(--white);
+    border-top: 1px solid #e3f0f3;
+}
+
+.books h2 {
+    margin-bottom: 12px;
+    color: var(--main-color);
+    font-family: "Noto Serif TC", serif;
+    font-size: 32px;
+    letter-spacing: 3px;
+}
+
+/* 標題下方裝飾線 */
+
+.books h2::after {
+    content: "";
+    display: block;
+    width: 42px;
+    height: 3px;
+    margin: 14px auto 36px;
+    border-radius: 3px;
+    background-color: var(--light-blue);
+}
+
+/* 書籍輪播 */
+
+.book-carousel {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.book-list {
+    display: flex;
+    flex: 1;
+    gap: 24px;
+    min-width: 0;
+    overflow-x: auto;
+    padding: 10px 4px 24px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+.book-list::-webkit-scrollbar {
+    display: none;
+}
+
+/* 單本書卡 */
+
+.book {
+    flex: 0 0 180px;
+    min-width: 0;
+    padding: 14px 12px 18px;
+    border: 1px solid #e8f1f3;
+    border-radius: 12px;
+    background-color: #ffffff;
+    text-align: left;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.book:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 22px #42677718;
+}
+
+/* 書籍封面 */
+
+.book-cover {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 210px;
+    margin: 0 auto 16px;
+}
+
+.book-cover img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* 書名、作者與價格 */
+
+.book h3 {
+    margin-bottom: 8px;
+    color: var(--text-color);
+    font-family: "Noto Serif TC", serif;
+    font-size: 15px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+.book p {
+    margin-bottom: 10px;
+    color: #7b8e95;
+    font-family: Arial, "Noto Serif TC", serif;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 1.7;
+}
+
+.book strong {
+    color: var(--text-color);
+    font-size: 14px;
+}
+
+.red {
+    color: #cc1313;
+}
+
+/* 輪播左右按鈕 */
+
+.arrow {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border: 1px solid #d9e9ed;
+    border-radius: 50%;
+    background-color: #eff8fa;
+    color: var(--main-color);
+    font-size: 27px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.arrow:hover {
+    background-color: var(--main-color);
+    color: var(--white);
+}
+
+/* =========================
+   頁尾
+========================= */
+
+footer {
+    padding: 28px 20px;
+    background-color: var(--main-color);
+    color: var(--white);
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    font-family: Arial, "Noto Serif TC", serif;
+    font-size: 12px;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+
+/* =========================
+   平板版面
+========================= */
+
+@media (max-width: 1100px) {
+    .hero {
+        grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.5fr);
+        gap: 28px;
+        padding: 56px 4%;
+    }
+
+    .hero-cards {
+        gap: 12px;
+    }
+
+    .flip-card {
+        height: 310px;
+    }
+
+    .flip-card-front {
+        padding: 14px 10px;
+    }
+
+    .flip-card-front img {
+        height: 195px;
+    }
+
+    .flip-card-front h3 {
+        font-size: 15px;
+    }
+
+    .flip-card-back {
+        padding: 16px 12px;
+    }
+
+    .flip-card-back h3 {
+        font-size: 16px;
+    }
+
+    .flip-card-back p {
+        font-size: 12px;
+    }
+
+    .menu {
+        gap: 20px;
+    }
+
+    nav {
+        padding: 16px 4%;
+    }
+}
+
+/* =========================
+   手機版面
+========================= */
+
+@media (max-width: 768px) {
+    body > h1 {
+        font-size: 30px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+        padding: 20px;
+    }
+
+    .logo {
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu {
+        flex-wrap: wrap;
+        gap: 16px 22px;
+    }
+
+    #countdown {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        min-height: auto;
+        padding: 52px 6% 60px;
+    }
+
+    .hero-text {
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: clamp(36px, 8vw, 48px);
+        text-align: center;
+    }
+
+    .hero-cards {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .flip-card {
+        height: 270px;
+    }
+
+    .flip-card-front {
+        padding: 12px 8px;
+    }
+
+    .flip-card-front img {
+        height: 160px;
+    }
+
+    .flip-card-front h3 {
+        font-size: 13px;
+    }
+
+    .flip-card-front p {
+        font-size: 11px;
+    }
+
+    .flip-card-back {
+        padding: 12px 8px;
+    }
+
+    .flip-card-back h3 {
+        font-size: 14px;
+    }
+
+    .flip-card-back p {
+        font-size: 11px;
+        line-height: 1.8;
+    }
+
+    .flip-card-link {
+        margin-top: 14px;
+        padding: 8px 10px;
+        font-size: 11px;
+    }
+
+    .books {
+        padding: 56px 4%;
+    }
+
+    .books h2 {
+        font-size: 28px;
+    }
+
+    .book-carousel {
+        gap: 8px;
+    }
+
+    .book-list {
+        gap: 14px;
+    }
+
+    .book {
+        flex-basis: 155px;
+    }
+
+    .book-cover {
+        height: 180px;
+    }
+
+    .arrow {
+        width: 34px;
+        height: 34px;
+        font-size: 22px;
+    }
+}
+
+/* =========================
+   小螢幕手機
+========================= */
+
+@media (max-width: 480px) {
+    .hero-cards {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .flip-card {
+        width: 220px;
+        max-width: 100%;
+        height: 320px;
+    }
+
+    .flip-card-front img {
+        height: 210px;
+    }
+
+    .flip-card-front h3 {
+        font-size: 16px;
+    }
+
+    .flip-card-front p {
+        font-size: 12px;
+    }
+
+    .flip-card-back h3 {
+        font-size: 18px;
+    }
+
+    .flip-card-back p {
+        font-size: 13px;
+    }
+
+    .flip-card-link {
+        font-size: 12px;
+    }
+
+    .book {
+        flex-basis: 145px;
+    }
+
+    .book-cover {
+        height: 160px;
+    }
+
+    .book-carousel {
+        gap: 5px;
+    }
+
+    .arrow {
+        width: 30px;
+        height: 30px;
+        font-size: 20px;
+    }
+}

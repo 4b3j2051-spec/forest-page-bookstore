@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
+    <title>BOOKSTORE｜森頁書店</title>
+</head>
+<body>
+    <h1>森頁書店</h1>
+    <p>BOOKSTORE｜森頁書店</p>
+    <!-- 導覽列 -->
+    <nav>
+
+        <div class="logo">
+            BOOKSTORE
+        </div>
+
+        <div class="menu">
+
+            <a href="index.html" style="text-align: center;">首頁</a>
+            <a href="about-us.html" style="text-align: center;">關於我們</a>
+            <a href="all-books.html" style="text-align: center;">所有書籍</a>
+            <a href="categories.html" style="text-align: center;">分類</a>
+           
+
+        </div>
+        <h3 id="countdown"></h3>
+            <script>
+        const targetDate = new Date("2026-11-10");
+        const today = new Date();
+
+        const difference = targetDate - today;
+
+        const days = Math.ceil(
+            difference / (1000 * 60 * 60 * 24)
+        );
+
+        document.getElementById("countdown").textContent =
+            "距離新書上市還有 " + days + " 天";
+            </script>
+    </nav>
+
+    <!-- 主視覺 -->
+    <section class="hero">
+
+        <div class="hero-text">
+
+            <p>WELCOME TO BOOKSTORE</p>
+
+            <h1>
+                找一本<br>
+                屬於你的書
+            </h1>
+            
+            <p>
+                在文字裡，遇見不同的世界。
+            </p>
+
+            <button onclick="location.href='all-books.html'">
+            開始探索
+            </button>
+
+        </div>
+
+         <!-- 右側：互動圖卡 -->
+    <div class="hero-cards">
+
+        <div class="flip-card" tabindex="0"
+             role="button" aria-label="文學小說，點擊翻面">
+            <div class="flip-card-inner">
+
+                <div class="flip-card-front">
+                    <img src="book cover/我是如此幸運.jpg"
+                         alt="我是如此幸運的書封">
+                    <h3>文學小說</h3>
+                    <p>點擊探索 →</p>
+                </div>
+
+                <div class="flip-card-back">
+                    <h3>走進故事的世界</h3>
+                    <p>在文字之中，遇見不同的人生與風景。</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="flip-card" tabindex="0"
+             role="button" aria-label="文學小說，點擊翻面">
+            <div class="flip-card-inner">
+
+                <div class="flip-card-front">
+                    <img src="book cover/橘色的馬.jpg"
+                         alt="橘色的馬的書封">
+                    <h3>兒童與青少年</h3>
+                    <p>點擊探索 →</p>
+                </div>
+
+                <div class="flip-card-back">
+                    <h3>探索成長的每一步</h3>
+                    <p>在閱讀之中，開啟想像，發現世界的無限可能。</p>
+                </div>
+
+            </div>
+        </div>
+        <div class="flip-card" tabindex="0"
+             role="button" aria-label="文學小說，點擊翻面">
+            <div class="flip-card-inner">
+
+                <div class="flip-card-front">
+                    <img src="book cover/字型散步.jpg"
+                         alt="字型散步的書封">
+                    <h3>藝術與設計</h3>
+                    <p>點擊探索 →</p>
+                </div>
+
+                <div class="flip-card-back">
+                    <h3>感受藝術的無限可能</h3>
+                    <p>在創意與美感之中，探索生活的不同樣貌。</p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    </section>
+
+    
+<!-- 熱門書籍 -->
+<section class="books">
+
+    <h2>熱門書籍</h2>
+
+    <div class="book-carousel">
+
+        <button class="arrow" id="prev">‹</button>
+
+        <div class="book-list" id="bookList">
+
+            <div class="book">
+                <div class="book-cover">
+                    <img src="book cover/我是如此幸運.jpg" alt="我是如此幸運">
+                </div>
+                <h3>我是如此幸運</h3>
+                <p>作者：克里斯欽．華森</p>
+                <strong>NT$ 355</strong>
+            </div>
+
+            <div class="book">
+                <div class="book-cover">
+                    <img src="book cover/我討厭貓.jpg" alt="我討厭貓">
+                </div>
+                <h3>我討厭貓</h3>
+                <p>作者：橫田大助</p>
+                <strong><span class="red">79</span>折 NT$ <span class="red">252</span></strong>
+            </div>
+
+            <div class="book">
+                <div class="book-cover">
+                    <img src="book cover/字型散步.jpg" alt="字型散步">
+                </div>
+                <h3>字型散步：日常生活的中文字型學</h3>
+                <p>作者：柯志杰、蘇煒翔</p>
+                <strong><span class="red">9</span>折 NT$ <span class="red">324</span></strong>
+            </div>
+
+            <div class="book">
+                <div class="book-cover">
+                    <img src="book cover/橘色的馬.jpg" alt="橘色的馬">
+                </div>
+                <h3>橘色的馬</h3>
+                <p>作者：劉旭恭</p>
+                <strong><span class="red">優惠價</span> NT$ <span class="red">315</span></strong>
+            </div>
+
+            <div class="book">
+                <div class="book-cover">
+                    <img src="book cover/感知幸福.jpg" alt="感知幸福">
+                </div>
+                <h3>感知幸福（吉本芭娜娜的幸福論）</h3>
+                <p>作者：吉本芭娜娜</p>
+                <strong><span class="red">79</span>折 NT$ <span class="red">300</span></strong>
+            </div>
+
+            <div class="book">
+                <div class="book-cover">
+                    <img src="book cover/化學課.jpg" alt="化學課">
+                </div>
+                <h3>化學課</h3>
+                <p>作者： 邦妮．嘉姆斯</p>
+                <strong><span class="red">7</span>折 NT$ <span class="red">343</span></strong>
+            </div>
+
+            <div class="book">
+                <div class="book-cover">
+                    <img src="book cover/八十個台灣關鍵字.jpg" alt="八十個台灣關鍵字">
+                </div>
+                <h3>八十個台灣關鍵字：一個法國男生眼中的福爾摩沙</h3>
+                <p>作者： 奧雷利安．羅沙尼諾</p>
+                <strong><span class="red">79</span>折 NT$ <span class="red">331</span></strong>
+            </div>
+
+        </div>
+
+        <button class="arrow" id="next">›</button>
+
+    </div>
+
+</section>
+<!-- Footer -->
+    <footer>
+
+        <p>© 2026 BOOKSTORE｜森頁書店</p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="all-books.css">
+    <title>BOOKSTORE｜森頁書店｜所有書籍</title>
+</head>
+<body>
+    <!-- 導覽列 -->
+    <nav>
+
+        <div class="logo">
+            BOOKSTORE
+        </div>
+
+        <div class="menu">
+
+            <a href="index.html" style="text-align: center;">首頁</a>
+            <a href="about-us.html" style="text-align: center;">關於我們</a>
+            <a href="all-books.html" style="text-align: center;">所有書籍</a>
+            <a href="categories.html" style="text-align: center;">分類</a>
+
+        </div>
+        <h3 id="countdown"></h3>
+            <script>
+        const targetDate = new Date("2026-11-10");
+        const today = new Date();
+
+        const difference = targetDate - today;
+
+        const days = Math.ceil(
+            difference / (1000 * 60 * 60 * 24)
+        );
+
+        document.getElementById("countdown").textContent =
+            "距離新書上市還有 " + days + " 天";
+            </script>
+    </nav>
+
+    <!-- 頁面主視覺 -->
+    <header class="books-hero">
+        <p class="eyebrow">BOOK COLLECTION</p>
+        <h1>所有書籍</h1>
+        <p>在字裡行間，找到與自己相遇的故事。</p>
+        <span class="hero-en">FIND YOUR NEXT READ.</span>
+    </header>
+
+    <main class="books-main">
+
+        <!-- 搜尋與分類 -->
+        <section class="book-tools">
+            <div class="tools-heading">
+                <div>
+                    <p class="small-title">EXPLORE OUR BOOKS</p>
+                    <h2>探索閱讀</h2>
+                </div>
+                <p id="book-count">共 5 本書</p>
+            </div>
+
+            <div class="search-box">
+                <span>⌕</span>
+                <input type="search" id="book-search"
+                    placeholder="搜尋書名或關鍵字……">
+            </div>
+
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">全部書籍</button>
+                <button class="filter-btn" data-filter="fiction">小說與文學</button>
+                <button class="filter-btn" data-filter="art">藝術與設計</button>
+                <button class="filter-btn" data-filter="life">生活與心靈</button>
+            </div>
+        </section>
+
+        <!-- 書籍列表 -->
+        <section class="book-grid" id="book-grid">
+
+            <article class="book-card" data-category="fiction">
+                <div class="book-cover">
+                    <img src="book cover/我是如此幸運.jpg"
+                        alt="我是如此幸運的書封">
+                    <span class="book-tag">小說與文學</span>
+                </div>
+                <div class="book-info">
+                    <p class="book-category">FICTION</p>
+                    <h3>我是如此幸運</h3>
+                    <p class="book-description">在故事裡，感受人生不同的風景。</p>
+                </div>
+            </article>
+
+            <article class="book-card" data-category="fiction">
+                <div class="book-cover">
+                    <img src="book cover/我討厭貓.jpg"
+                        alt="我討厭貓的書封">
+                    <span class="book-tag">小說與文學</span>
+                </div>
+                <div class="book-info">
+                    <p class="book-category">FICTION</p>
+                    <h3>我討厭貓</h3>
+                    <p class="book-description">從書名出發，探索故事背後的想像。</p>
+                </div>
+            </article>
+
+            <article class="book-card" data-category="art">
+                <div class="book-cover">
+                    <img src="book cover/字型散步.jpg"
+                        alt="字型散步的書封">
+                    <span class="book-tag">藝術與設計</span>
+                </div>
+                <div class="book-info">
+                    <p class="book-category">ART & DESIGN</p>
+                    <h3>字型散步</h3>
+                    <p class="book-description">從日常文字中，發現字體與設計的美。</p>
+                </div>
+            </article>
+
+            <article class="book-card" data-category="fiction">
+                <div class="book-cover">
+                    <img src="book cover/橘色的馬.jpg"
+                        alt="橘色的馬的書封">
+                    <span class="book-tag">小說與文學</span>
+                </div>
+                <div class="book-info">
+                    <p class="book-category">FICTION</p>
+                    <h3>橘色的馬</h3>
+                    <p class="book-description">翻開書頁，遇見另一段故事與想像。</p>
+                </div>
+            </article>
+
+            <article class="book-card" data-category="life">
+                <div class="book-cover">
+                    <img src="book cover/感知幸福.jpg"
+                        alt="感知幸福的書封">
+                    <span class="book-tag">生活與心靈</span>
+                </div>
+                <div class="book-info">
+                    <p class="book-category">LIFE & MIND</p>
+                    <h3>感知幸福</h3>
+                    <p class="book-description">試著放慢腳步，重新感受生活中的美好。</p>
+                </div>
+            </article>
+
+        </section>
+
+        <p class="no-results" id="no-results" hidden>
+            找不到符合條件的書籍，試試其他關鍵字吧。
+        </p>
+
+    </main>
+
+    <!-- 頁尾 -->
+    <footer class="books-footer">
+        <a href="index.html">森頁書店</a>
+        <p>在文字之間，遇見不同的世界。</p>
+        <span>TURN A PAGE, FIND A WORLD.</span>
+    </footer>
+
+    <!-- 書籍搜尋與分類篩選 -->
+    <script>
+        const searchInput = document.getElementById("book-search");
+        const filterButtons = document.querySelectorAll(".filter-btn");
+        const bookCards = document.querySelectorAll(".book-card");
+        const bookCount = document.getElementById("book-count");
+        const noResults = document.getElementById("no-results");
+
+        let currentFilter = "all";
+
+        function filterBooks() {
+            const keyword = searchInput.value.trim().toLowerCase();
+            let visibleCount = 0;
+
+            bookCards.forEach(function (card) {
+                const category = card.dataset.category;
+                const text = card.textContent.toLowerCase();
+
+                const matchesCategory =
+                    currentFilter === "all" || category === currentFilter;
+
+                const matchesKeyword = text.includes(keyword);
+                const isVisible = matchesCategory && matchesKeyword;
+
+                card.hidden = !isVisible;
+
+                if (isVisible) {
+                    visibleCount++;
+                }
+            });
+
+            bookCount.textContent = "共 " + visibleCount + " 本書";
+            noResults.hidden = visibleCount !== 0;
+        }
+
+        filterButtons.forEach(function (button) {
+            button.addEventListener("click", function () {
+                currentFilter = button.dataset.filter;
+
+                filterButtons.forEach(function (item) {
+                    item.classList.remove("active");
+                });
+
+                button.classList.add("active");
+                filterBooks();
+            });
+        });
+
+        searchInput.addEventListener("input", filterBooks);
+    </script>
+    
+</body>
+</html>

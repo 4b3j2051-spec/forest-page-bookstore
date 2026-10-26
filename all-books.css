@@ -1,0 +1,436 @@
+
+/* 導覽列 */
+
+nav {
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 80px;
+
+    background-color: white;
+
+    #countdown {
+        font-size: 18px;
+        color: #333;
+    font-family: "Noto Serif TC", serif;
+}
+}
+
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+.menu {
+    display: flex;
+    gap: 40px;
+}
+
+
+.menu a {
+    text-decoration: none;
+    color: #333;
+    font-family: "Noto Serif TC", serif;
+    font-weight: bold;
+}
+
+/* 導覽列動畫 */
+
+.menu a {
+    position: relative;
+    text-decoration: none;
+    color: #344b55;
+    transition: color 0.3s ease;
+}
+
+.menu a:hover {
+    color: #426777;
+}
+
+/* 底線動畫 */
+
+.menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background-color: #426777;
+    transition: width 0.3s ease;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+/* ===== 全頁設定 ===== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #effcff;
+    color: #344b55;
+    font-family: "Noto Sans TC", sans-serif;
+    line-height: 1.8;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+/* ===== 導覽列 ===== */
+.books-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    padding: 18px 7%;
+    background-color: #ffffff;
+}
+
+.brand {
+    color: #344b55;
+    font-family: "Noto Serif TC", serif;
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+}
+
+.nav-links a {
+    color: #526b76;
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #426777;
+    font-weight: 600;
+}
+
+/* ===== 主視覺 ===== */
+.books-hero {
+    position: relative;
+    padding: 75px 20px 85px;
+    overflow: hidden;
+    background: linear-gradient(120deg, #effcff, #dceff4);
+    text-align: center;
+}
+
+.eyebrow,
+.small-title {
+    color: #648b9a;
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+.eyebrow {
+    margin: 0 0 10px;
+}
+
+.books-hero h1 {
+    margin: 0;
+    font-family: "Noto Serif TC", serif;
+    font-size: 42px;
+    font-weight: 600;
+    letter-spacing: 5px;
+}
+
+.books-hero > p:not(.eyebrow) {
+    margin: 15px 0;
+    color: #607780;
+    font-size: 14px;
+}
+
+.hero-en {
+    color: #8aaab5;
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+/* ===== 主要內容 ===== */
+.books-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 65px 35px 100px;
+}
+
+.book-tools {
+    margin-bottom: 38px;
+}
+
+.tools-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.small-title {
+    margin: 0 0 5px;
+}
+
+.tools-heading h2 {
+    margin: 0;
+    font-family: "Noto Serif TC", serif;
+    font-size: 28px;
+    font-weight: 500;
+}
+
+#book-count {
+    color: #78919b;
+    font-size: 13px;
+}
+
+/* ===== 搜尋框 ===== */
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    max-width: 480px;
+    padding: 10px 16px;
+    margin-bottom: 25px;
+    background-color: #ffffff;
+    border: 1px solid #dcecf1;
+    border-radius: 4px;
+}
+
+.search-box span {
+    color: #648b9a;
+    font-size: 25px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 5px 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #344b55;
+    font-family: inherit;
+    font-size: 14px;
+}
+
+.search-box input::placeholder {
+    color: #a1b3ba;
+}
+
+/* ===== 分類按鈕 ===== */
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.filter-btn {
+    padding: 9px 20px;
+    border: 1px solid #c9e1e8;
+    border-radius: 30px;
+    background-color: #ffffff;
+    color: #526b76;
+    font-family: inherit;
+    font-size: 13px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filter-btn:hover {
+    border-color: #648b9a;
+    color: #426777;
+}
+
+.filter-btn.active {
+    background-color: #426777;
+    border-color: #426777;
+    color: #ffffff;
+}
+
+/* ===== 書籍卡片 ===== */
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 38px 25px;
+}
+
+.book-card {
+    min-width: 0;
+    transition: transform 0.3s;
+}
+
+.book-card:hover {
+    transform: translateY(-5px);
+}
+
+.book-cover {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 290px;
+    padding: 18px;
+    overflow: hidden;
+    background-color: #ffffff;
+    border: 1px solid #e1eff3;
+    border-radius: 4px;
+}
+
+.book-cover img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.4s;
+}
+
+.book-card:hover .book-cover img {
+    transform: scale(1.04);
+}
+
+.book-tag {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    padding: 4px 9px;
+    background-color: #effcff;
+    color: #648b9a;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.book-info {
+    padding: 15px 3px 0;
+}
+
+.book-category {
+    margin: 0 0 5px;
+    color: #8aaab5;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.book-info h3 {
+    margin: 0 0 7px;
+    font-family: "Noto Serif TC", serif;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.book-description {
+    margin: 0;
+    color: #71858d;
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+/* ===== 沒有搜尋結果 ===== */
+.no-results {
+    padding: 45px 15px;
+    color: #78919b;
+    text-align: center;
+}
+
+/* ===== 頁尾 ===== */
+.books-footer {
+    padding: 45px 20px 35px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.books-footer > a {
+    color: #344b55;
+    font-family: "Noto Serif TC", serif;
+    font-size: 23px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-decoration: none;
+}
+
+.books-footer p {
+    margin: 10px 0;
+    color: #607780;
+    font-size: 13px;
+}
+
+.books-footer span {
+    color: #8aaab5;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+/* ===== 平板 ===== */
+@media (max-width: 900px) {
+    .book-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .book-cover {
+        height: 270px;
+    }
+}
+
+/* ===== 手機 ===== */
+@media (max-width: 600px) {
+    .books-nav {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .nav-links {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .books-hero {
+        padding: 60px 20px;
+    }
+
+    .books-hero h1 {
+        font-size: 32px;
+    }
+
+    .books-main {
+        padding: 45px 20px 70px;
+    }
+
+    .tools-heading h2 {
+        font-size: 24px;
+    }
+
+    .book-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px 15px;
+    }
+
+    .book-cover {
+        height: 230px;
+        padding: 12px;
+    }
+
+    .book-info h3 {
+        font-size: 15px;
+    }
+
+    .book-tag {
+        left: 6px;
+        top: 6px;
+        padding: 3px 6px;
+        font-size: 9px;
+    }
+}
